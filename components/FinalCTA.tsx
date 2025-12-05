@@ -1,10 +1,26 @@
-import React from 'react'; 
-import { Button } from './Button';
-import { Reveal } from './Reveal';
+import React, { useEffect } from "react";
+import Cal, { getCalApi } from "@calcom/embed-react";
+import { Reveal } from "./Reveal";
 
 export const FinalCTA: React.FC = () => {
+  useEffect(() => {
+    (async function () {
+      const cal = await getCalApi({ namespace: "atharvCTA" });
+
+      cal("ui", {
+        theme: "dark",
+        cssVarsPerTheme: {
+          light: { "cal-brand": "#ff3333" },
+          dark: { "cal-brand": "#ff3333" },
+        },
+        hideEventTypeDetails: true,
+        layout: "month_view",
+      });
+    })();
+  }, []);
+
   return (
-    <section className="flex flex-col items-center text-center max-w-3xl mx-auto pb-20">
+    <section className="flex flex-col items-center text-center w-full pb-0 ">
       <Reveal>
         <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-8 leading-tight">
           Ready to See How This Works for Your Business?
@@ -12,19 +28,30 @@ export const FinalCTA: React.FC = () => {
       </Reveal>
 
       <Reveal delay={200}>
-        <div className="flex flex-col items-center gap-4">
-          <a 
-            href="https://cal.com/atharvmalve/30min?overlayCalendar=true" 
-            target="_blank" 
-            rel="noopener noreferrer"
-          >
-            <Button className="text-lg px-10 py-5 w-full md:w-auto min-w-[200px]">
-              Book a Demo
-            </Button>
-          </a>
-          <p className="text-white/40 text-sm mt-4 font-medium">
-            No credit card required. Free consultation.
-          </p>
+        <div
+          className="
+            md:w-screen
+             w-full     /* ← MUCH wider on desktop */
+            mx-auto 
+            rounded-xl 
+            
+            
+            backdrop-blur-sm 
+            overflow-hidden 
+            md:p-2
+            p-0
+          "
+        >
+          <Cal
+            namespace="atharvCTA"
+            calLink="atharvmalve/30min"
+            config={{ layout: "month_view", theme: "dark" }}
+            style={{
+              width: "100%",
+              height: "600px", // increased height for bigger layout
+              overflow: "auto",
+            }}
+          />
         </div>
       </Reveal>
     </section>

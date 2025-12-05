@@ -22,7 +22,7 @@ export const Navbar: React.FC = () => {
       `}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-        <div className="text-2xl font-extrabold tracking-tight">
+        <div className="text-2xl font-bold tracking-tight">
           atharv<span className="text-brand-red">.</span>
         </div>
         
