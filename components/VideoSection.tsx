@@ -11,15 +11,24 @@ export const VideoSection: React.FC = () => {
       </Reveal>
 
       <Reveal delay={200}>
-        <div className="relative w-full max-w-3xl aspect-video mx-auto">
-          <iframe
-            src="https://player.vimeo.com/video/1144317084?h=dc96e9d12a"
-            className="rounded-[4px] w-full h-full border border-white/20"
-            allow="autoplay; fullscreen; picture-in-picture"
-            allowFullScreen
-          />
-        </div>
-      </Reveal>
+  <div
+    className="
+      relative 
+      w-screen
+      mx-auto 
+      aspect-video
+      
+    "
+  >
+    <iframe
+      src="https://player.vimeo.com/video/1144317084?h=dc96e9d12a&title=0&byline=0&portrait=0&badge=0"
+      className="rounded-[4px] w-full h-full border border-white/20 py-4 md:px-36"
+      allow="autoplay; fullscreen; picture-in-picture"
+      allowFullScreen
+    />
+  </div>
+</Reveal>
+
     </section>
   );
 };
