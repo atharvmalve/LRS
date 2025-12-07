@@ -1,6 +1,5 @@
 import React from 'react';
 import { Reveal } from './Reveal';
-import videoFile from '../assets/video.mp4';
 
 export const VideoSection: React.FC = () => {
   return (
@@ -13,11 +12,11 @@ export const VideoSection: React.FC = () => {
 
       <Reveal delay={200}>
         <div className="relative w-full max-w-3xl aspect-video mx-auto">
-          <video
-            src={videoFile}
-            className="rounded-[4px] w-full h-full object-cover border border-white/20"
-            controls
-            preload="metadata"
+          <iframe
+            src="https://player.vimeo.com/video/1144317084?h=dc96e9d12a"
+            className="rounded-[4px] w-full h-full border border-white/20"
+            allow="autoplay; fullscreen; picture-in-picture"
+            allowFullScreen
           />
         </div>
       </Reveal>

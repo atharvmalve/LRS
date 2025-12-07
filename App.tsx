@@ -10,7 +10,7 @@ const App: React.FC = () => {
       <Navbar />
       <main className="flex flex-col items-center w-full max-w-7xl mx-auto px-6 space-y-32 pb-32 pt-12 md:pt-24">
         <Hero />
-        {/* <VideoSection /> */}
+        <VideoSection />
         <FinalCTA />
       </main>
     </div>
